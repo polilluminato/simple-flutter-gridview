@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Flutter Responsive GridView',
       theme: ThemeData(
         primaryColor: Colors.red,
         accentColor: Colors.redAccent,
@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
           headline6: TextStyle(fontSize: 16, color: Colors.red),
         ),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(
+        title: 'Flutter Responsive GridView',
+      ),
     );
   }
 }
