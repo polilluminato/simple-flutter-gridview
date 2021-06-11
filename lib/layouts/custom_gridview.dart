@@ -30,20 +30,32 @@ class CustomGridView extends StatelessWidget {
       primary: false,
       crossAxisCount: 12,
       itemBuilder: (context, index) => Container(
-        color: _myColorList[random.nextInt(_myColorList.length)],
-        height: random.nextInt(150).toDouble() + 100,
-        margin: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
-        child: Center(
-          child: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(20),
-                ),
-              ),
-              padding: EdgeInsets.all(8),
-              child: Text("$index")),
+        decoration: BoxDecoration(
+          color: _myColorList[random.nextInt(_myColorList.length)],
+          borderRadius: BorderRadius.circular(4),
+          boxShadow: const[
+            BoxShadow(
+              color: Colors.black26,
+              offset: Offset(0,2),
+              blurRadius: 6
+            )
+          ]
         ),
+        height: random.nextInt(75).toDouble() + 200,
+        margin: EdgeInsets.symmetric(horizontal: 6, vertical: 6),
+        child: Column(children: [
+          Expanded(
+            child: Container(),
+          ),
+          Container(
+            color: Colors.white,
+            child: ListTile(
+              leading: FlutterLogo(),
+              title: Text("Card with index $index"),
+              subtitle: Text("#card #index$index #flutter"),
+            ),
+          )
+        ]),
       ),
       staggeredTileBuilder: (index) => StaggeredTile.fit(columnRatio),
     );
